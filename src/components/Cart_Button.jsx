@@ -2,10 +2,12 @@ import { useAuth0 } from "@auth0/auth0-react"
 import { BsCart2, BsPersonPlus, BsPersonDash } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import { useCartContext } from "../context/cart_context"
+import { useNavigate } from "react-router-dom"
 
 const Cart_Button = () => {
   const { user, loginWithRedirect, logout } = useAuth0()
   const { total_items, clearCart } = useCartContext()
+  const navigate=useNavigate();
   return (
     <>
       <div className="  flex space-x-8  md:space-x-8">
@@ -37,7 +39,7 @@ const Cart_Button = () => {
             <button
               title="Login"
               className="flex"
-              onClick={() => loginWithRedirect()}
+              onClick={() => navigate("/login")}
             >
               <BsPersonPlus className="h-6 w-6" />
             </button>

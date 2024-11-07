@@ -1,5 +1,5 @@
-import { Navbar, Footer } from "./components"
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { Navbar, Footer } from "./components";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
   Home,
   Cart,
@@ -12,19 +12,22 @@ import {
   Features,
   Services,
   News,
-} from "./pages"
-import ReactGA from "react-ga4"
-const measurementID = "G-Y1EV1Q38PH"
-ReactGA.initialize(measurementID)
+} from "./pages";
+import ReactGA from "react-ga4";
+import Auth from "./auth/page";
+const measurementID = "G-Y1EV1Q38PH";
+ReactGA.initialize(measurementID);
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/shop" element={<Products />} />
-        <Route path="/shop/:id" element={<SingleProduct />} />
+          <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Auth />}>
+          <Route path="cart" element={<Cart />} />
+          <Route path="shop" element={<Products />} />
+          <Route path="shop/:id" element={<SingleProduct />} />
+        </Route>
         <Route
           path="/checkout"
           element={
@@ -51,8 +54,7 @@ function App() {
       </Routes>
       <Footer />
     </BrowserRouter>
-    
-  )
+  );
 }
 
-export default App
+export default App;
