@@ -17,6 +17,8 @@ import ReactGA from "react-ga4";
 import Auth from "./auth/page";
 import Profile from "./context/profile";
 import { Notifications } from "reactjs-notify-toast";
+import ProductDetails from "./components1/ProductDetais.jsx";
+
 const measurementID = "G-Y1EV1Q38PH";
 ReactGA.initialize(measurementID);
 function App() {
@@ -27,6 +29,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/login" element={<Auth />} />
             <Route path="cart" element={<Cart />} />
             <Route path="shop" element={<Products />} />

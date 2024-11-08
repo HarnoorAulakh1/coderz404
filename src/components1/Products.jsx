@@ -1,27 +1,20 @@
-import React from 'react';
-import ProductCard from './Card';
+import React from "react";
+import ProductCard from "./Card";
+import { products } from "../components1/products.js";
 
-const products = [
-  {
-    id: 1,
-    name: 'Wireless Headphones',
-    price: 99.99,
-    image: 'https://example.com/images/headphones.jpg',
-  },
-  {
-    id: 2,
-    name: 'Smartphone',
-    price: 699.99,
-    image: 'https://example.com/images/smartphone.jpg',
-  },
-];
-
-const ProductList = () => {
+const ProductList = ({ heading, sp, ep }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
+    <div className="ml-10 flex flex-col gap-5">
+      <h1 className="text-3xl font-bold">{heading}</h1>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {products.map((p) =>
+          p.id >= sp && p.id <= ep ? (
+            <ProductCard key={p.id} product={p} />
+          ) : (
+            <></>
+          )
+        )}
+      </div>
     </div>
   );
 };

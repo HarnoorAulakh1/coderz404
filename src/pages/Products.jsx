@@ -31,7 +31,6 @@ const Products = () => {
         <div className="w-full space-y-8 font-light  ">
           {products.length < 1 && <NotFound />}
           {products.length >= 1 && <Sort />}
-          <AllProducts />
         </div>
         {/* Sidebar filter */}
         <Sidebar_Filter />
