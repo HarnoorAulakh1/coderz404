@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNotify } from "reactjs-notify-toast";
-//import { userContext } from "../components/Profile";
 import { useNavigate } from "react-router-dom";
+import { userContext } from "../context/profile";
 
 function Form() {
   const [state, set] = useState(true);
@@ -113,7 +113,7 @@ function Signup({ setter }) {
 function Login({ setter }) {
   const router = useNavigate();
   const { show } = useNotify();
-  //const { dispatch } = useContext(userContext);
+  const {dispatch}=useContext(userContext);
   async function handle(e) {
     e.preventDefault();
     const form = e.target;
@@ -135,8 +135,9 @@ function Login({ setter }) {
     if (res.status) {
       console.log(`Logged in as ${res.username}`);
       show(`Logged in as ${res.username}`, "success");
-      //dispatch(res);
-      router("/user");
+      dispatch(res);
+      console.log(res);
+      router("/");
     }
   }
   return (

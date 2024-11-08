@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react"
 
 import { useProductsContext } from "../context/products_context"
 import { Loading } from "../components"
+import ProductList from "/Users/harnoorsinghaulakh/Desktop/coderz404/src/components1/Products.jsx"
 
 const HomeProduct = lazy(() => import("../components/HomeProduct"))
 const BasketProduct = lazy(() => import("../components/Basket"))
@@ -17,10 +18,11 @@ const Home = () => {
     <>
       <Suspense fallback={<Loading />}>
         <Header />
-        <HomeProduct />
+        {/* <HomeProduct />
         <BasketProduct />
         <ProductGrid />
-        <ProductCategory />
+        <ProductCategory /> */}
+        <ProductList/>
         <Instagram />
       </Suspense>
     </>
