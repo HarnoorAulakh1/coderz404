@@ -9,11 +9,11 @@ const Header = () => {
         <div className="space-y-4">
           <h1 className="text-4xl font-light capitalize leading-[1.2] md:text-5xl">
             {" "}
-            <span className=" font-medium ">Shoptik</span> Number #1Trusted
-            furniture website.{" "}
+            <span className=" font-medium ">HerCarft-Hub</span> #1 Trusted
+            website by the Craftsmen.{" "}
           </h1>
           <p className="font-medium text-orange-400">
-            coming soon in your door with a huge discount.
+            coming soon 
           </p>
         </div>
         <View_button title="view now" />

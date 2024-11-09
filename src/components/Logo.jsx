@@ -7,7 +7,7 @@ const Logo = ({ className }) => {
       <h1
         className={`relative flex  pr-3 font-extrabold tracking-widest  text-black md:text-3xl ${className} `}
       >
-        Shoptik
+        HerCraft-Hub
         <span className="absolute right-[5px] bottom-2 h-[6px] w-[6px] bg-primary "></span>
       </h1>
     </Link>

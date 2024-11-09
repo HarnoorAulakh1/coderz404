@@ -14,20 +14,20 @@ import { FiMail } from "react-icons/fi"
 const blog_data = [
   {
     id: 1,
-    title: "Furniture Decoration idea",
-    date: "October 20, 2022",
+    title: "Celebrating Craftsmanship",
+    date: "October 20, 2024",
     image: Blog_01,
   },
   {
     id: 2,
-    title: "Decorate your idea in house",
-    date: "November 03, 2022",
+    title: "Handcrafted Heritage",
+    date: "October 21, 2024",
     image: Blog_02,
   },
   {
     id: 3,
-    title: "Dining Table decorate",
-    date: "December 15, 2022",
+    title: "From Village to You",
+    date: "October 22, 2024",
     image: Blog_03,
   },
 ]
@@ -38,9 +38,9 @@ const Footer = () => {
       <footer className="container mx-auto mt-28 grid grid-cols-1 space-y-10 bg-primary px-5 py-8 tracking-wider text-white md:mt-28 md:grid-cols-4 md:space-y-0 xl:px-28 xl:py-20 ">
         {/* Shoptik */}
         <section className="space-y-4">
-          <h1 className="text-4xl font-black tracking-wider">Shoptik.</h1>
+          <h1 className="text-4xl font-black tracking-wider">HerCraft-Hub.</h1>
           <p className="w-2/3 text-sm font-light">
-            Explore the various kind of products for your Home, office and Room.
+          "Crafted with Heart: Discover Authentic Treasures from Rural Artisans"
           </p>
         </section>
 
@@ -56,21 +56,21 @@ const Footer = () => {
                 {" "}
                 <BsTelephone />{" "}
               </span>
-              <span> (+88) 1234 567898</span>
+              <span> (+91)9998887776</span>
             </p>
             <p className="flex items-center space-x-1">
               <span>
                 {" "}
                 <FiMail />{" "}
               </span>
-              <span> shoptik@gmail.com</span>
+              <span> hercrafthub@gmail.com</span>
             </p>
             <p className="flex items-center space-x-1">
               <span>
                 {" "}
                 <BsBuilding />{" "}
               </span>
-              <span> 469, Hog Camp Road, California</span>
+              <span> TIET, Patiala</span>
             </p>
             <div className="flex space-x-6">
               <a href="#" aria-label="Facebook">
@@ -97,7 +97,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col space-y-4 text-sm font-light">
             <a href="#" className="hover:text-white/80">
-              About Shoptik
+              About HerCraft-Hub
             </a>
             <a href="#" className="hover:text-white/80">
               Contact us
