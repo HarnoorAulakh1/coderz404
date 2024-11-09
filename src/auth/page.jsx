@@ -2,6 +2,7 @@ import Form from "./form";
 import React from "react";
 
 export default function Auth() {
+
   return (
     <div
       style={{

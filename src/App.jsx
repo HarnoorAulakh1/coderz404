@@ -18,6 +18,8 @@ import Auth from "./auth/page";
 import Profile from "./context/profile";
 import { Notifications } from "reactjs-notify-toast";
 import ProductDetails from "./components1/ProductDetais.jsx";
+import CartProvider from "./context/cartContext.jsx";
+import Dashboard from "./components1/dashboard.jsx";
 
 const measurementID = "G-Y1EV1Q38PH";
 ReactGA.initialize(measurementID);
@@ -25,41 +27,44 @@ function App() {
   return (
     <BrowserRouter>
       <Notifications>
-        <Profile>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/product/:id" element={<ProductDetails />} />
-            <Route path="/login" element={<Auth />} />
-            <Route path="cart" element={<Cart />} />
-            <Route path="shop" element={<Products />} />
-            <Route path="shop/:id" element={<SingleProduct />} />
-            <Route
-              path="/checkout"
-              element={
-                <ProtectedRoute>
-                  {" "}
-                  <Checkout />{" "}
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/completion"
-              element={
-                <ProtectedRoute>
-                  {" "}
-                  <Completion />{" "}
-                </ProtectedRoute>
-              }
-            />
+        <CartProvider>
+          <Profile>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/product/:id" element={<ProductDetails />} />
+              <Route path="/login" element={<Auth />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="shop" element={<Products />} />
+              <Route path="shop/:id" element={<SingleProduct />} />
+              <Route
+                path="/checkout"
+                element={
+                  <ProtectedRoute>
+                    {" "}
+                    <Checkout />{" "}
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/completion"
+                element={
+                  <ProtectedRoute>
+                    {" "}
+                    <Completion />{" "}
+                  </ProtectedRoute>
+                }
+              />
 
-            <Route path="/features" element={<Features />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/news" element={<News />} />
-            <Route path="*" element={<Error />} />
-          </Routes>
-          <Footer />
-        </Profile>
+              <Route path="/features" element={<Features />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/news" element={<News />} />
+              <Route path="*" element={<Error />} />
+            </Routes>
+            <Footer />
+          </Profile>
+        </CartProvider>
       </Notifications>
     </BrowserRouter>
   );

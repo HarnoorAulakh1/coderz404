@@ -1,8 +1,8 @@
 import React from "react";
 import ProductCard from "./Card";
-import { products } from "../components1/products.js";
+//import { products } from "../components1/products.js";
 
-const ProductList = ({ heading, sp, ep }) => {
+const ProductList = ({ heading,products, sp, ep }) => {
   return (
     <div className="ml-10 flex flex-col gap-5">
       <h1 className="text-3xl font-bold">{heading}</h1>

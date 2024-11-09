@@ -24,7 +24,7 @@ export default function Profile({ children }) {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const data = await fetch(`/api/user/checklogin`, {
+      const data = await fetch(`http://localhost:4000/user/checkLogin`, {
         method: "GET",
         mode: "cors",
         headers: {
@@ -35,7 +35,7 @@ export default function Profile({ children }) {
       dispatch(await data.json());
     };
     fetchUser();
-  }, []);
+  },[]);
 
   return (
     <userContext.Provider value={{ user, dispatch }}>
