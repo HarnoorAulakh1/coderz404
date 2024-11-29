@@ -11,17 +11,17 @@ export const navLinks = [
   },
   {
     id: 3,
-    title: "features",
+    title: "Contact Us",
     url: "/features",
   },
   {
     id: 4,
-    title: "services",
+    title: "About",
     url: "/services",
   },
   {
     id: 5,
-    title: "news",
+    title: "Sign in",
     url: "/news",
   },
 ]
