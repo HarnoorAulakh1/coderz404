@@ -29,12 +29,11 @@ const Home = () => {
         <BasketProduct />
         <ProductGrid />
         <ProductCategory /> */}
-        <div className="mt-10 flex flex-col gap-5">
+        <div className="mt-10 flex flex-col gap-5 bg-stone-100">
           <ProductList heading="Fashion" products={products} sp={1} ep={8} />
           <ProductList heading="Home Decor" products={products} sp={8} ep={16} />
           <ProductList heading="Foods" products={products} sp={16} ep={24} />
         </div>
-
         <Instagram />
       </Suspense>
     </>

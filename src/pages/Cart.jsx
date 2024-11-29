@@ -14,7 +14,7 @@ const Cart = () => {
     <>
       <Breadcrumb title="cart" />
       {/* <CartItems /> */}
-      <div className="mt-10 flex flex-col gap-5">
+      <div className="mt-10 flex flex-col gap-5 ">
         <CartList heading="Fashion" products={data.cart}/>
       </div>
     </>

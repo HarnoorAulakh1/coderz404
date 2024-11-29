@@ -33,7 +33,6 @@ const CartItem = ({ item, onRemove, onQuantityChange }) => {
       <div className="w-1/6">
         <img src={image} alt={name} className="h-[5rem] w-[5rem] rounded-md" />
       </div>
-
       {/* Product Details */}
       <div className="ml-4 flex-1">
         <h2 className="text-lg font-semibold">{name}</h2>

@@ -4,17 +4,15 @@ import Light2 from "../assets/light2.webp"
 import { View_button } from "../components"
 const Header = () => {
   return (
-    <header className="container relative mx-auto flex overflow-hidden bg-[#d2e9e3] px-5 py-14 lg:py-20 xl:h-[28rem] xl:px-28">
+    <header className="container relative mx-auto flex overflow-hidden bg-[#556F7A] px-5 py-14 lg:py-20 xl:h-[28rem] xl:px-28">
       <div className=" space-y-8 md:w-2/3 md:space-y-16 xl:w-1/2">
         <div className="space-y-4">
           <h1 className="text-4xl font-light capitalize leading-[1.2] md:text-5xl">
             {" "}
-            <span className=" font-medium ">HerCarft-Hub</span> #1 Trusted
+            <span className=" font-medium ">HerCraft-Hub</span> #1 Trusted
             website by the Craftsmen.{" "}
           </h1>
-          <p className="font-medium text-orange-400">
-            coming soon 
-          </p>
+
         </div>
         <View_button title="view now" />
       </div>

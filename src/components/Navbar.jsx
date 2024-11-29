@@ -9,7 +9,7 @@ const Navbar = () => {
   const { openSidebar, isSidebarOpen } = useProductsContext()
   return (
     <>
-      <nav className="py-4 md:bg-gray-100 xl:py-8">
+      <nav className="py-4 md: bg-zinc-300 xl:py-8">
         <div className="container mx-auto flex h-full flex-col items-center justify-center space-y-2 px-5 md:flex-row md:justify-between xl:max-w-screen-xl xl:px-28  ">
           {/* Logo */}
           <Logo className=" text-3xl " />
@@ -28,10 +28,9 @@ const Navbar = () => {
           <div className=" hidden md:flex ">
             <Cart_Button />
           </div>
-
-          {/* Mobile version */}
+          {/*   */}
           <section className=" flex w-full items-center justify-between pt-5 pb-2 md:hidden  ">
-            {/* Sidebar menu button */}
+            {/*n */}
             <button
               type="button"
               aria-label="Open Sidebar"
@@ -43,7 +42,7 @@ const Navbar = () => {
             <Cart_Button />
           </section>
           <section className=" flex w-full items-center justify-between pt-5 pb-2 md:hidden  ">
-            {/* Sidebar menu button */}
+            {/*n */}
             <button
               type="button"
               aria-label="Open Sidebar"

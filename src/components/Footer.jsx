@@ -35,7 +35,7 @@ const blog_data = [
 const Footer = () => {
   return (
     <>
-      <footer className="container mx-auto mt-28 grid grid-cols-1 space-y-10 bg-primary px-5 py-8 tracking-wider text-white md:mt-28 md:grid-cols-4 md:space-y-0 xl:px-28 xl:py-20 ">
+      <footer className="container mx-auto mt-28 grid grid-cols-1 space-y-10 bg-orange-800	 px-5 py-8 tracking-wider text-white md:mt-28 md:grid-cols-4 md:space-y-0 xl:px-28 xl:py-20 ">
         {/* Shoptik */}
         <section className="space-y-4">
           <h1 className="text-4xl font-black tracking-wider">HerCraft-Hub.</h1>
