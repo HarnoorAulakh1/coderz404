@@ -9,15 +9,14 @@ const ContactUs = () => {
     const form = e.target;
   
     try {
-      // Pass the form element directly as the third argument
       await emailjs.sendForm(
         "service_iwn8dar", 
         "template_a4t570x", 
-        form, // Pass the form element
-        "AvZCR-DRk4h1QPzjk" // Public Key directly
+        form, 
+        "AvZCR-DRk4h1QPzjk" 
       );
       show("Message sent successfully!", "success");
-      form.reset(); // Clear the form after submission
+      form.reset(); 
     } catch (error) {
       console.error("Failed to send message:", error);
       show("Failed to send message. Please try again later.", "error");
