@@ -9,9 +9,7 @@ import {
   Checkout,
   ProtectedRoute,
   Completion,
-  Features,
   Services,
-  News,
 } from "./pages";
 import ReactGA from "react-ga4";
 import Auth from "./auth/page";
@@ -21,6 +19,7 @@ import ProductDetails from "./components1/ProductDetais.jsx";
 import CartProvider from "./context/cartContext.jsx";
 import Dashboard from "./components1/dashboard.jsx";
 import { useEffect } from "react";
+import Contact from "./pages/Contact.jsx";
 
 const measurementID = "G-Y1EV1Q38PH";
 ReactGA.initialize(measurementID);
@@ -61,7 +60,7 @@ function App() {
                 }
               />
 
-              <Route path="/features" element={<Features />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/services" element={<Services />} />
               <Route path="*" element={<Error />} />
             </Routes>

@@ -9,9 +9,9 @@ function Form() {
 }
 
 function Signup({ setter }) {
+  const { show } = useNotify();
   async function handle(e) {
     e.preventDefault();
-
     const form = e.target;
     const data = new FormData(form);
     const response = await fetch("http://localhost:4000/user/register", {
@@ -28,8 +28,7 @@ function Signup({ setter }) {
       },
       credentials: "include",
     });
-    if (response.status == 200) alert("Account created successfully");
-    else alert(JSON.stringify(await response.json()));
+    show(JSON.stringify(await response.json()), "success");
     e.target.reset();
   }
   return (
@@ -113,7 +112,7 @@ function Signup({ setter }) {
 function Login({ setter }) {
   const router = useNavigate();
   const { show } = useNotify();
-  const {dispatch}=useContext(userContext);
+  const { dispatch } = useContext(userContext);
   async function handle(e) {
     e.preventDefault();
     const form = e.target;
@@ -124,7 +123,7 @@ function Login({ setter }) {
       body: JSON.stringify({
         username: data.get("username"),
         password: data.get("password"),
-      }),   
+      }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -138,6 +137,8 @@ function Login({ setter }) {
       dispatch(res);
       console.log(res);
       router("/");
+    } else {
+      show("Invalid credentials", "error");
     }
   }
   return (
