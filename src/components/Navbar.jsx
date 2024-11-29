@@ -1,28 +1,28 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import { navLinks } from "../utils/constants"
-import { BsList } from "react-icons/bs"
-import { Sidebar, Logo, Cart_Button } from "../components"
-import { useProductsContext } from "../context/products_context"
+import React from "react";
+import { Link } from "react-router-dom";
+import { navLinks } from "../utils/constants";
+import { BsList } from "react-icons/bs";
+import { Sidebar, Logo, Cart_Button } from "../components";
+import { useProductsContext } from "../context/products_context";
 
 const Navbar = () => {
-  const { openSidebar, isSidebarOpen } = useProductsContext()
+  const { openSidebar, isSidebarOpen } = useProductsContext();
   return (
     <>
-      <nav className="py-4 md: bg-zinc-300 xl:py-8">
+      <nav className="md: bg-zinc-300 py-4 xl:py-8">
         <div className="container mx-auto flex h-full flex-col items-center justify-center space-y-2 px-5 md:flex-row md:justify-between xl:max-w-screen-xl xl:px-28  ">
           {/* Logo */}
           <Logo className=" text-3xl " />
           {/* Menu items */}
           <div className="hidden space-x-10 text-sm uppercase md:flex">
             {navLinks.map((menu) => {
-              const { id, title, url } = menu
+              const { id, title, url } = menu;
               return (
                 <Link key={id} to={url}>
                   {" "}
                   {title}
                 </Link>
-              )
+              );
             })}
           </div>
           <div className=" hidden md:flex ">
@@ -57,7 +57,7 @@ const Navbar = () => {
       </nav>
       {isSidebarOpen ? <Sidebar /> : null}
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -20,10 +20,14 @@ import { Notifications } from "reactjs-notify-toast";
 import ProductDetails from "./components1/ProductDetais.jsx";
 import CartProvider from "./context/cartContext.jsx";
 import Dashboard from "./components1/dashboard.jsx";
+import { useEffect } from "react";
 
 const measurementID = "G-Y1EV1Q38PH";
 ReactGA.initialize(measurementID);
 function App() {
+  useEffect(() => {
+    document.title = 'HerCraft-Hub';
+  }, []);
   return (
     <BrowserRouter>
       <Notifications>

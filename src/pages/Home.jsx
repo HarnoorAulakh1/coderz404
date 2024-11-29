@@ -32,7 +32,7 @@ const Home = () => {
         <div className="mt-10 flex flex-col gap-5 bg-stone-100">
           <ProductList heading="Fashion" products={products} sp={1} ep={8} />
           <ProductList heading="Home Decor" products={products} sp={8} ep={16} />
-          <ProductList heading="Foods" products={products} sp={16} ep={24} />
+          <ProductList heading="Foods" products={products} sp={16} ep={products.length} />
         </div>
         <Instagram />
       </Suspense>

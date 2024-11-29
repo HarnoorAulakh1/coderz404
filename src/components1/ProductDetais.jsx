@@ -1,4 +1,4 @@
-import React,{useContext} from "react";
+import React,{useContext, useEffect,useRef} from "react";
 import { useParams } from "react-router-dom";
 import { products } from "./products";
 import { cartContext } from "../context/cartContext";
@@ -9,10 +9,11 @@ const ProductDetails = () => {
   const product = products.find((product) => product.id === parseInt(id));
   const { data, dispatch } = useContext(cartContext);
   const {show}=useNotify();
+  const ref=useRef(null);
 
-  // if (!product) {
-  //   return <div>Product not found</div>;
-  // }
+  useEffect(() => {
+    ref.current.scrollIntoView({behavior:'smooth',block:'start'});
+  });
 
   function handle(e) {
     e.preventDefault();
@@ -30,7 +31,7 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="mx-auto max-w-4xl p-4">
+    <div className="mx-auto max-w-4xl p-4" ref={ref}>
       <div className="flex flex-col md:flex-row">
         <img
           className="h-96 w-full object-cover md:w-1/2"
@@ -39,7 +40,7 @@ const ProductDetails = () => {
         />
         <div className="md:ml-8">
           <h1 className="mb-4 text-4xl font-bold">{product.name}</h1>
-          <p className="mb-4 text-xl text-gray-600">${product.price}</p>
+          <p className="mb-4 text-xl text-gray-600">Rs.{product.price}</p>
           <p className="mb-4 text-base text-gray-700">{product.description}</p>
           <button
             onClick={handle}
