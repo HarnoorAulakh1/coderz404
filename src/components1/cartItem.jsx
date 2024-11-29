@@ -4,27 +4,50 @@ import { cartContext } from "../context/cartContext";
 
 const CartItem = ({ item, onRemove, onQuantityChange }) => {
   const { id, name, image, price, quantity } = item;
-  const { data,dispatch } = useContext(cartContext);
-  const [state,set]=useState(data.cart.filter((item) => item.id === id).length);
+  const { data, dispatch } = useContext(cartContext);
+  const [state, set] = useState(
+    data.cart.filter((item) => item.id === id).length
+  );
+
+  console.log(data, state);
 
   function remove(e) {
     e.preventDefault();
     dispatch((data) => {
-      return { cart: data.cart.filter((item) => item.id != id), total: data.total - price * state, cartItems: data.cartItems - state };
+      return {
+        cart: data.cart.filter((item) => item.id != id),
+        total: data.total - price * state,
+        cartItems: data.cartItems - state,
+      };
     });
   }
 
-  function changeQuantity(e,inc) {
+  function changeQuantity(e, inc) {
     e.preventDefault();
-    dispatch((data)=>{
-        if(inc==-1 && state==1)
-            return {cart:data.cart.filter((item)=>item.id!=id),total:data.total-price,cartItems:data.cartItems-1,shipping:data.shipping-10};
-        else if(inc==1)
-            return {cart:data.cart,total:data.total+price,cartItems:data.cartItems+1,shipping:data.shipping+10};
-        else if(inc==-1)
-            return {cart:data.cart,total:data.total-price,cartItems:data.cartItems-1,shipping:data.shipping-10};
-    })
-    set((x)=>x+inc);
+    dispatch((data) => {
+      if (inc == -1 && state == 1)
+        return {
+          cart: data.cart.filter((item) => item.id != id),
+          total: data.total - price,
+          cartItems: data.cartItems - 1,
+          shipping: data.shipping - 10,
+        };
+      else if (inc == 1)
+        return {
+          cart: data.cart,
+          total: data.total + price,
+          cartItems: data.cartItems + 1,
+          shipping: data.shipping + 10,
+        };
+      else if (inc == -1)
+        return {
+          cart: data.cart,
+          total: data.total - price,
+          cartItems: data.cartItems - 1,
+          shipping: data.shipping - 10,
+        };
+    });
+    set((x) => x + inc);
   }
 
   return (
@@ -43,7 +66,7 @@ const CartItem = ({ item, onRemove, onQuantityChange }) => {
       <div className="flex items-center">
         <button
           className="rounded-md bg-gray-200 px-2 py-1"
-          onClick={(e) => changeQuantity(e,-1)}
+          onClick={(e) => changeQuantity(e, -1)}
           //   onClick={() => onQuantityChange(id, quantity - 1)}
         >
           -
@@ -51,7 +74,7 @@ const CartItem = ({ item, onRemove, onQuantityChange }) => {
         <span className="px-4 text-lg">{state}</span>
         <button
           className="rounded-md bg-gray-200 px-2 py-1"
-          onClick={(e) => changeQuantity(e,1)}
+          onClick={(e) => changeQuantity(e, 1)}
         >
           +
         </button>
@@ -71,8 +94,14 @@ const CartItem = ({ item, onRemove, onQuantityChange }) => {
 export default CartItem;
 
 export const CartList = ({ products }) => {
+  const { data, dispatch } = useContext(cartContext);
   return (
     <div className="ml-10 flex flex-col gap-5">
+      <div className="mb-4">
+        <h2 className="text-xl font-semibold">Cart Summary</h2>
+        <p>Total Items: {data.cartItems}</p>
+        <p>Total Price: ${data.total.toFixed(2)}</p>
+      </div>
       <div className="flex flex-col gap-6 md:grid-cols-2 lg:grid-cols-3">
         {products.map((p) => (
           <CartItem key={p.id} item={p} />
