@@ -28,7 +28,9 @@ function Signup({ setter }) {
       },
       credentials: "include",
     });
-    show(JSON.stringify(await response.json()), "success");
+    //const res=await response.json();
+    //console.log(res);
+    show("user created successfully", "success");
     e.target.reset();
   }
   return (
