@@ -12,7 +12,7 @@ export default function Auth() {
   }, [user]);
   return (
     <div key={user._id}>
-      {user._id != undefined ? (
+      {(user._id != undefined && user._id!="") ? (
         <Profile user={user} />
       ) : (
         <div

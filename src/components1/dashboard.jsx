@@ -56,7 +56,7 @@ const Dashboard = () => {
 
   return (
     <>
-      {user._id != undefined ? (
+      {(user._id != undefined && user._id!="")? (
         <div className="container mx-auto p-8">
           <h1 className="mb-6 text-2xl font-bold">Add New Menu Item</h1>
 
