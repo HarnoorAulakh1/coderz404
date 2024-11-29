@@ -7,6 +7,10 @@ const ContactUs = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     const form = e.target;
+    if(!form.name.value || !form.email.value || !form.message.value) {
+      show("Please fill out all the fields.", "error");
+      return;
+    }
   
     try {
       await emailjs.sendForm(
