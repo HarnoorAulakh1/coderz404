@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="md: bg-zinc-300 py-4 xl:py-8">
-        <div className="container mx-auto flex h-full flex-col items-center justify-center space-y-2 px-5 md:flex-row md:justify-between xl:max-w-screen-xl xl:px-28  ">
+        <div className="container mx-auto flex h-full flex-row items-center justify-center space-y-2 px-5 gap-[10rem]">
           {/* Logo */}
           <Logo className=" text-3xl " />
           {/* Menu items */}
