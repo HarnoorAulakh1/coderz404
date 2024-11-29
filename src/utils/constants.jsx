@@ -22,7 +22,7 @@ export const navLinks = [
   {
     id: 5,
     title: "Sign in",
-    url: "/news",
+    url: "/login",
   },
 ]
 

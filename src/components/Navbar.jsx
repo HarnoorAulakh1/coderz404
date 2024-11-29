@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { navLinks } from "../utils/constants";
 import { BsList } from "react-icons/bs";
@@ -7,6 +7,7 @@ import { useProductsContext } from "../context/products_context";
 
 const Navbar = () => {
   const { openSidebar, isSidebarOpen } = useProductsContext();
+  const [state, set] = useState(false);
   return (
     <>
       <nav className="md: bg-zinc-300 py-4 xl:py-8">
@@ -25,12 +26,22 @@ const Navbar = () => {
               );
             })}
           </div>
-          <div className=" hidden md:flex ">
+          <div className="hidden md:flex ">
             <Cart_Button />
           </div>
-          {/*   */}
-          <section className=" flex w-full items-center justify-between pt-5 pb-2 md:hidden  ">
-            {/*n */}
+
+          {/* <section className=" flex w-full items-center justify-between pt-5 pb-2 md:hidden">
+            <button
+              type="button"
+              aria-label="Open Sidebar"
+              onClick={()=>set((x)=>!x)}
+              className=" border border-black p-1 hover:border-primary hover:bg-primary hover:text-white "
+            >
+              <BsList className="h-6 w-6" />
+            </button>
+          </section> */}
+
+          {/* <section className=" flex w-full items-center justify-between pt-5 pb-2 md:hidden  ">
             <button
               type="button"
               aria-label="Open Sidebar"
@@ -41,18 +52,7 @@ const Navbar = () => {
             </button>
             <Cart_Button />
           </section>
-          <section className=" flex w-full items-center justify-between pt-5 pb-2 md:hidden  ">
-            {/*n */}
-            <button
-              type="button"
-              aria-label="Open Sidebar"
-              onClick={openSidebar}
-              className=" border border-black p-1 hover:border-primary hover:bg-primary hover:text-white "
-            >
-              <BsList className="h-6 w-6" />
-            </button>
-            <Cart_Button />
-          </section>
+           */}
         </div>
       </nav>
       {isSidebarOpen ? <Sidebar /> : null}

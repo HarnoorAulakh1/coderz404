@@ -63,7 +63,6 @@ function App() {
 
               <Route path="/features" element={<Features />} />
               <Route path="/services" element={<Services />} />
-              <Route path="/news" element={<News />} />
               <Route path="*" element={<Error />} />
             </Routes>
             <Footer />
